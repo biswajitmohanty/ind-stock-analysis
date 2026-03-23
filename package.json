@@ -1,0 +1,36 @@
+{
+  "name": "ind-stock-analysis",
+  "version": "1.0.0",
+  "description": "Indian Stock Market Analysis Tool - Technical analysis for NSE/BSE stocks",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "bun src/index.ts predict --ticker=RELIANCE.NS,TCS.NS,INFY.NS,HDFCBANK.NS,ICICIBANK.NS",
+    "predict": "bun src/index.ts predict",
+    "optimize": "bun src/index.ts optimize",
+    "learn": "bun src/index.ts learn",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "commander": "^13.1.0",
+    "csv-parse": "^5.6.0",
+    "es-toolkit": "^1.32.0",
+    "luxon": "^3.5.0",
+    "pino": "^9.6.0",
+    "technicalindicators": "^3.1.0",
+    "yahoo-finance2": "^2.11.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.2.4",
+    "@types/luxon": "^3.4.2",
+    "msw": "^2.7.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.0.7"
+  }
+}

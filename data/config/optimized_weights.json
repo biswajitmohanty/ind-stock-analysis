@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-23T00:00:00.000Z",
+  "symbol": "RELIANCE.NS",
+  "indicatorWeights": {
+    "rsi": 79,
+    "stochastic": 76,
+    "bollinger": 78,
+    "donchian": 74,
+    "williamsR": 72,
+    "indiaVix": 50,
+    "macd": 75,
+    "sma": 60,
+    "ema": 65
+  },
+  "patternWeights": {
+    "ascendingTriangle": 75,
+    "bullishFlag": 75,
+    "doubleBottom": 70,
+    "fallingWedge": 70,
+    "islandReversal": 73
+  },
+  "thresholds": {
+    "buy": 200,
+    "sell": 200
+  },
+  "calibration": {
+    "slope": 0.01,
+    "intercept": -1.0
+  }
+}
