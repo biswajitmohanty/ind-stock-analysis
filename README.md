@@ -368,9 +368,87 @@ public/
   stock_data_YYYYMMDD.csv        ← Daily output files
   stock_data_YYYYMMDD.json       ← JSON output (optional)
 
+.agents/                         ← Multi-agent orchestration system
+  agents/                        ← 5 agent definitions (backend, data, QA, debug, PM)
+  skills/                        ← 6 domain skills + 11 shared resources
+    oma-orchestrator/            ← Parallel agent spawning & coordination
+    oma-backend/                 ← API & data fetching specialist
+    oma-data/                    ← Indicators, patterns, scoring specialist
+    oma-qa/                      ← Quality assurance & review specialist
+    oma-debug/                   ← Bug diagnosis specialist
+    oma-commit/                  ← Conventional Commits specialist
+    _shared/                     ← Core protocols, quality scoring, exploration loops
+  workflows/                     ← 8 workflows (orchestrate, plan, debug, review, etc.)
+  config/                        ← User preferences (timezone, language, CLI mapping)
+  mcp.json                       ← MCP server config for Serena integration
+  brain/                         ← Knowledge storage
+  results/                       ← Agent execution results
+
+.serena/                         ← Persistent memory system
+  project.yml                    ← Serena project config (TypeScript, tree-sitter)
+  memories/                      ← Project overview, code conventions, commands, checklist
+
+.claude/skills/                  ← Claude Code skill definitions
+  indian-stock-analysis/         ← Main analysis skill
+  indian-trading-analysis/       ← Report generation skill
+  indian-market-data/            ← Data fetching skill
+  indian-backtesting/            ← Optimization skill
+
 .portfolio.json                  ← Persisted portfolio
 .env.example                     ← Environment variable template
 ```
+
+## Multi-Agent Orchestration System
+
+The project includes a comprehensive multi-agent AI orchestration system (`.agents/`) inspired by the OMA (Oh-My-Agent) framework, fully adapted for Indian stock market analysis.
+
+### Agent Roster
+
+| Agent | Domain | Specialization |
+|-------|--------|----------------|
+| **Backend Engineer** | API & Data | Multi-source fetching (Upstox/NSE/Yahoo), service layer |
+| **Data Engineer** | Analysis | Technical indicators, chart patterns, scoring, calibration |
+| **QA Reviewer** | Quality | Security, data accuracy, performance, code quality |
+| **Debug Investigator** | Bug Fixing | Data fetch failures, indicator errors, scoring bugs |
+| **PM Planner** | Planning | Requirements analysis, task decomposition |
+
+### Workflows
+
+| Workflow | Purpose |
+|----------|---------|
+| **orchestrate** | Automated parallel agent execution (max 3 agents) |
+| **plan** | Requirements gathering and task decomposition |
+| **debug** | Structured 7-step bug diagnosis |
+| **review** | Security/accuracy/performance/quality review pipeline |
+| **commit** | Conventional Commits with auto-separation by domain |
+| **ultrawork** | 5-phase development: PLAN → IMPL → VERIFY → REFINE → SHIP |
+| **brainstorm** | Design-first ideation before implementation |
+| **exec-plan** | Execution plan lifecycle management |
+
+### Quality System
+
+- **Quality Score** (0-100): 5 dimensions — Correctness (30%), Security (25%), Performance (15%), Coverage (15%), Consistency (15%)
+- **Experiment Ledger**: Tracks every change attempt with before/after quality scores
+- **Exploration Loop**: Hypothesis-driven alternative testing when standard approaches fail
+- **Clarification Debt**: Tracks session quality (clarify +10, correct +25, redo +40)
+
+### Serena Memory System
+
+The `.serena/` directory provides persistent memory for AI assistants:
+
+- **project_overview.md** — Full project description, features, tech stack
+- **code_style_and_conventions.md** — TypeScript conventions, INR formatting, error handling
+- **suggested_commands.md** — All CLI commands for development and analysis
+- **task_completion_checklist.md** — 6-section verification checklist
+
+### Claude Code Skills
+
+Four skill definitions in `.claude/skills/` enable Claude Code to assist with:
+
+- **indian-stock-analysis** — Technical analysis, predictions, scoring engine
+- **indian-trading-analysis** — Report generation, portfolio analysis
+- **indian-market-data** — Multi-source data fetching (Upstox, NSE, Yahoo)
+- **indian-backtesting** — Strategy optimization, self-improvement learning
 
 ## Indian Market Adaptations
 
