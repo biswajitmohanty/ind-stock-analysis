@@ -1,0 +1,30 @@
+# Serena Project Configuration
+# Indian Stock Market Analysis Tool
+
+project_name: "ind-stock-analysis"
+languages:
+  - typescript
+encoding: utf-8
+ignore_all_files_in_gitignore: true
+read_only: false
+
+# Language backend configuration
+language_backend:
+  typescript:
+    parser: tree-sitter
+    file_extensions:
+      - .ts
+      - .tsx
+    ignore_patterns:
+      - node_modules/**
+      - dist/**
+      - public/**
+      - data/**
+
+# Symbol analysis budget
+symbol_info_budget:
+  max_symbols_per_file: 50
+  max_depth: 3
+
+# Line ending
+line_ending: lf

@@ -1,0 +1,38 @@
+# User Preferences for Indian Stock Analysis Project
+# Optional configuration for agent behavior
+
+# Response language
+language: en
+
+# Date format
+date_format: ISO
+
+# Timezone (Indian Standard Time)
+timezone: Asia/Kolkata
+
+# Default CLI for agent spawning
+default_cli: claude
+
+# Agent-to-CLI mapping
+agent_cli_mapping:
+  backend: claude
+  data: claude
+  qa: claude
+  debug: claude
+  pm: claude
+
+# Indian market defaults
+market:
+  currency: INR
+  symbol: "₹"
+  exchange: NSE
+  default_suffix: ".NS"
+  market_open: "09:15"
+  market_close: "15:30"
+  timezone: "Asia/Kolkata"
+
+# Data source preferences
+data_sources:
+  primary: upstox      # Requires UPSTOX_ACCESS_TOKEN
+  secondary: nse       # NSE Direct scraping (no auth)
+  fallback: yahoo      # Yahoo Finance (always available)
